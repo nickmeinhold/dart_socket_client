@@ -1,4 +1,5 @@
 import 'package:dart_socket_client/dart_socket_client.dart';
+import 'package:dart_socket_client/dart_websocket_client.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,7 +29,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _count = 0;
-  final client = DartSocketClient();
+  final client = DartWebSocketClient();
 
   Future<void> initClient() async {}
 
