@@ -1,11 +1,24 @@
 import 'dart:io';
 
 class DartSocketClient {
-  Socket _socket;
+  DartSocketClient() {
+    // Check that we can connect to google
+    Socket.connect('google.com', 80).then((socket) {
+      print('Connected to google at: '
+          '${socket.remoteAddress.address}:${socket.remotePort}');
+      socket.destroy();
+    });
 
-  DartSocketClient();
+    Socket.connect('192.168.0.2', 45448).then((socket) {
+      print(socket.runtimeType);
+      // data to server:
+      socket.write('Hello, World from a client!');
+      // data from server:
+      socket.listen(_onData);
+    });
+  }
 
-  Future<Socket> init() async => Socket.connect('0.0.0.0', 6677);
-
-  void add(String value) => _socket.write(value);
+  _onData(List<int> data) {
+    print(String.fromCharCodes(data));
+  }
 }
