@@ -1,16 +1,27 @@
 # dart_socket_client
 
-A new Flutter project.
+Experimenting with Dart Sockets, using Flutter apps as client and server.
 
-## Getting Started
+## Context 
 
-This project is a starting point for a Flutter application.
+Experimenting with sockets so that we can (potentially) use sockets to do video file transfer over a local network in [CrowdLeague](https://github.com/nickmeinhold/crowdleague).
 
-A few resources to get you started if this is your first Flutter project:
+## Command Line Chat App 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Run the server 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To run the command line chat app `server`, download [dart_socket_server](https://github.com/nickmeinhold/dart_socket_server) and run:
+
+```sh
+dart chat_server.dart
+```
+
+### Run the client
+
+To run a command line chat app `client`, download this repo and run:
+
+```sh
+dart chat_client.dart
+```
+
+Open at least 2 clients, send a message and you will see the message in the other client. 
