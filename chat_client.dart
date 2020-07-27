@@ -4,7 +4,7 @@ import 'dart:io';
 Socket socket;
 
 void main() {
-  Socket.connect("localhost", 4567).then((Socket sock) {
+  Socket.connect('192.168.0.6', 4567).then((Socket sock) {
     socket = sock;
     socket.listen(dataHandler,
         onError: errorHandler, onDone: doneHandler, cancelOnError: false);
