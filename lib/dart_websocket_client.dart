@@ -5,13 +5,13 @@ class DartWebSocketClient {
 
   DartWebSocketClient() {
     //Open the websocket and attach the callbacks
-    WebSocket.connect('ws://192.168.0.2').then((WebSocket socket) {
+    WebSocket.connect('ws://192.168.0.39').then((WebSocket socket) {
       _ws = socket;
       _ws.listen(_onMessage, onDone: connectionClosed);
     });
   }
 
-  void _onMessage(String message) {
+  void _onMessage(dynamic message) {
     print(message);
   }
 
